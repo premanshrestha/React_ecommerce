@@ -9,7 +9,6 @@ const initialState= {
     cart:productData,
     totalAmt:0,
     cartCount:0,
-    cartVal:[],
   }
 
 
@@ -43,12 +42,12 @@ const displayCartItem =()=>{
     }
     //useEffet 1
     useEffect(()=>{
+
        fetchData()
     },[])
-    
     //useEffect 2
     useEffect(()=>{
-      dispatch({type:'GET_TOTALS'})
+      dispatch({type:'GET_TOTALS'}) 
     },[state.cart])
     return <AppContext.Provider 
         value={{

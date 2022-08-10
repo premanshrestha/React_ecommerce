@@ -2,6 +2,7 @@ import React,{useState,useEffect} from "react"
 import { FiChevronRight, FiChevronLeft } from 'react-icons/fi';
 import { FaPeopleArrows, FaQuoteRight } from 'react-icons/fa';
 import data from '../Data/bodyData'
+import { Link } from "react-router-dom";
 
 const Body =()=>{
     const [picture,setPicture] = useState(data)
@@ -29,7 +30,11 @@ const Body =()=>{
         <div className="col-3">
             <h1>Give Your Work A New Style!</h1>
             <p>Success isn't always about greatness. It's about consistency. Consistent  hard work gains success, Greatness will come</p>
-        <a href=""  className="btn">Explorer Now &#8594;</a>
+            <Link to ={`/products`} className='btn'>
+            Explorer Now &#8594;
+            </Link>
+
+        {/* <a href=""  className="btn">Explorer Now &#8594;</a> */}
         <a href="" className="btn">Donate &#8594; </a>
         </div>
         <div className="col-2">

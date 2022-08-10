@@ -1,3 +1,4 @@
+import productData from "./Data/productsData";
 const reducer = (state, action) => {
     if (action.type === 'CLEAR_CART') {
         return { ...state, cart: [] }
@@ -41,6 +42,9 @@ const reducer = (state, action) => {
     
 
     if (action.type === 'ADDTOCART') {
+        if(state.cart.length < 1){
+           alert(state.cart + "check" )
+        }
         let tempCart = state.cart.map((cartItem) => {       
             if (cartItem.id === action.payload) {
              return {...cartItem, cartCount:cartItem.cartCount+1}
@@ -48,15 +52,16 @@ const reducer = (state, action) => {
          
             return cartItem
         })
+        console.log(tempCart)
       
         return { ...state,cart:tempCart}
     }
     if(action.type==='DISPLAY_CART_ITEM'){
-        let singleItemTotal=0;
+    
         let tempCart = state.cart.map((cartItem) => {
                 if(cartItem.cartCount > 0){
-                    singleItemTotal = cartItem.cartCount * cartItem.price
-                      return{...cartItem,itemTotal: singleItemTotal}
+                   
+                      return{...cartItem}
                 }
             }).filter(notUndefined => notUndefined !== undefined);  
         

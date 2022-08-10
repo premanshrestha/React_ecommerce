@@ -43,6 +43,7 @@
     --mainTransition: all 0.3s linear;
     --mainWhite: #fff;
     --mainBlack: #222;
+    --clr-primary-light: hsl(205, 84%, 74%);
   }
   * {
     margin: 0;
@@ -416,8 +417,9 @@ input:focus{
     margin: 80px auto;
 }
 table{
-    width: 100%;
+    width: 70%;
     border-collapse: collapse;
+  
 }
 .cart-info{
     display: flex;
@@ -432,6 +434,11 @@ th{
 }
 td{
     padding: 10px 5px;
+}
+tfoot {
+  border-top:#000;
+  border-top-style: groove  ;
+  
 }
 td input{
     width: 40px;
@@ -853,12 +860,42 @@ Variables
     fill: var(--clr-primary-light);
   }
   .cartCount {
-    text-align: left;
-    margin-left:6px;
+    text-align: center;
     margin-bottom: 0;
     font-size: 1.25rem;
     line-height: 1;
   }
+  .cart-footer {
+    margin-top: 4rem;
+    text-align: center;
+  }
+  .clear-btn {
+    background: transparent;
+    padding: 0.5rem 1rem;
+    color: var(--clr-red-dark);
+    border: 1px solid var(--clr-red-dark);
+    margin-top: 2.25rem;
+    border-radius: var(--radius);
+  }
+  .clear-btn:hover {
+    background: var(--clr-red-light);
+    color: var(--clr-red-dark);
+    border-color: var(--clr-red-light);
+  }
+  .remove-btn {
+    color: red;
+    letter-spacing: var(--spacing);
+    cursor: pointer;
+    font-size: 0.85rem;
+    background: transparent;
+    border: none;
+    margin-top: 0.375rem;
+    transition: var(--transition);
+  }
+  .remove-btn:hover {
+    color: var(--clr-primary-light);
+  }
+  
 /* .loader,
 .loader:before,
 .loader:after {

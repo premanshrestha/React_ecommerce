@@ -18,9 +18,7 @@ function App() {
         <Route path='about' element={<About/>} />
         <Route path='products' element={<Products/>} />
         <Route path='cartContain' element={<CartConainer/>} />
-
-      
-    </Routes>
+      </Routes>
     </BrowserRouter>
     
 
